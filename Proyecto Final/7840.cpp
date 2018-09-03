@@ -128,6 +128,7 @@ void name() {
 		menu();
 	}
 	else {
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 }
@@ -147,6 +148,7 @@ void matricula() {
 		menu();
 	}
 	else {
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 }
@@ -166,6 +168,7 @@ void tel() {
 		menu();
 	}
 	else {
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 }
@@ -185,6 +188,7 @@ void email() {
 		menu();
 	}
 	else {
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 }
@@ -204,6 +208,7 @@ void grades() {
 		menu();
 	}
 	else {
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 }
@@ -227,6 +232,7 @@ void address(){
 		menu();
 	}
 	else {
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 }

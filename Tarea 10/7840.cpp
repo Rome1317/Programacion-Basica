@@ -1,50 +1,35 @@
-
-#include<iostream>
-#include<time.h>
-#include<windows.h>
+#include <iostream>
 using namespace std;
 
+int b;
+int a;
+
+
 int main() {
-	int pos = 49;
 
-	srand(time(NULL));
-	for (int i = 0; i<100; i++) {
-		system("cls");
-		int r = rand() % 2;
-		if (r == 0) {
-			pos = pos - 3;
-		}
-		else {
-			pos = pos + 3;
-		}
+	cout << "Base: ";
+	cin >> b;
 
-		if (pos < 0) {
-			pos = 99;
-		}
-		if (pos > 99) {
-			pos = 0;
-		}
+	cout << "Altura: ";
+	cin >> a;
 
-		for (int j = 0; j<100; j++) {
-			if (j == pos) {
-				cout << "A";
+	cout << endl;
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < b; j++) {
+			if ((i == 0) || (j == 0) || (i == a - 1) || (j == b - 1)) {
+				cout << "* " ;
 			}
 			else {
-				cout << "*";
+				cout << "  ";
 			}
 		}
-		
-		int conteo = 0;
-
-		while(pos == 49) {
-			conteo++;
-
-			cout << endl;
-            cout << "Numero de veces que ha pasado por la posicion inicial: " << conteo << endl;  
-			system("cls"); 
-		}
-
-		Sleep(50); // Duerme 50 milisegundos el programa
+	    cout << endl;
 	}
+
+	system("pause > nul");
+
 	return 0;
 }
+
+

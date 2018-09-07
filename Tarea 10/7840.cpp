@@ -4,7 +4,6 @@ using namespace std;
 int b;
 int a;
 
-
 int main() {
 
 	cout << "Base: ";

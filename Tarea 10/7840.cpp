@@ -38,11 +38,12 @@ int main() {
 
 		while(pos == 49) {
 			conteo++;
+
 			cout << endl;
             cout << "Numero de veces que ha pasado por la posicion inicial: " << conteo << endl;  
 			system("cls"); 
 		}
-   
+
 		Sleep(50); // Duerme 50 milisegundos el programa
 	}
 	return 0;

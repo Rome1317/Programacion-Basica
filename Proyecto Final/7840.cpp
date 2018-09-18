@@ -1,5 +1,6 @@
+
 #include <iostream>
-#include <string.h>
+#include <string>
 using namespace std;
 
 void menu();
@@ -11,16 +12,36 @@ void grades();
 void address();
 int choice;
 
-void main() {
+void registrar();
+void buscar();
+void lista();
+
+struct alumno {
+	string ape;
+	string nom;
+	int mat;
+	string email;
+	string tel;
+	string address;
+	int num;
+	float cal;
+	float cal2;
+	float cal3;
+	float promedio;
+
+};
+
+int main() {
 	locale::global(locale("spanish"));
 	menu();
+	return 0;
 }
 
 void menu() {
 	system("cls");
 	cout << "Inicio:" << endl;
 	cout << endl;
-	
+
 	cout << "Entrar al Menu: " << endl;
 	cout << "1. Si" << endl;
 	cout << "2. No" << endl;
@@ -98,7 +119,7 @@ void menu() {
 		default:
 			system("cls");
 			cout << "Ha salido del programa." << endl;
-			break; 
+			break;
 		}
 
 	}
@@ -106,17 +127,34 @@ void menu() {
 		cout << endl;
 		cout << "Ha salido del programa." << endl;
 	}
-	
+
 	system("pause > nul");
 }
 
 void name() {
-	cout << "Ingresar Apellido:" << endl;
-	char ape[20];
-	cin >> ape;
-	cout << "Ingresar Nombre: " << endl;
-	char nom[20];
-	cin >> nom;
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
+
 
 	cout << endl;
 	cout << "Regresar al Menu: " << endl;
@@ -134,9 +172,28 @@ void name() {
 }
 
 void matricula() {
-	cout << "Ingresar Matricula: " << endl;
-	int mat;
-	cin >> mat;
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
 
 	cout << endl;
 	cout << "Regresar al Menu: " << endl;
@@ -154,9 +211,28 @@ void matricula() {
 }
 
 void tel() {
-	cout << "Ingresar Telefono: " << endl;
-	int cel;
-	cin >> cel;
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
 
 	cout << endl;
 	cout << "Regresar al Menu: " << endl;
@@ -174,9 +250,28 @@ void tel() {
 }
 
 void email() {
-	cout << "Ingresar Email: " << endl;
-	char correo[30];
-	cin >> correo;
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
 
 	cout << endl;
 	cout << "Regresar al Menu: " << endl;
@@ -194,9 +289,66 @@ void email() {
 }
 
 void grades() {
-	cout << "Ingresar Calificaciones: " << endl;
-	float cal;
-	cin >> cal;
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
+   
+	cout << "Regresar al Menu: " << endl;
+	cout << "1. Si " << endl;
+	cout << "2. No " << endl;
+	cin >> choice;
+
+	if (choice == 1) {
+		menu();
+	}
+	else {
+		system("cls");
+		cout << "Ha salido del programa." << endl;
+	}
+}
+
+void address() {
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
 
 	cout << endl;
 	cout << "Regresar al Menu: " << endl;
@@ -213,26 +365,25 @@ void grades() {
 	}
 }
 
-void address(){
-	cout << "Ingresar Direccion: " << endl;
-	cout << "Calle: ";
-	char calle[20];
-	cin >> calle;
-	cout << "Numero: ";
-	int num;
-	cin >> num;
+void registrar() {
+	system("cls");
+	alumno database[100];
+	cout << "Cuantos alumnos quiere registrar: ";
+	int c;
+	cin >> c;
+	int id = 0;
+	system("cls");
 
-	cout << endl;
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
+	for (int i = 0; i < c; i++) {
 	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
+	lista();
+	system("pause > nul");
 }
+
+	void buscar() {
+		
+	}
+
+	void lista() {
+
+	}

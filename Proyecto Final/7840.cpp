@@ -1,16 +1,20 @@
-
 #include <iostream>
 #include <string>
 using namespace std;
 
 void menu();
-void name();
-void tel();
-void email();
-void matricula();
+void names();
+void matriculas();
 void grades();
-void address();
+void alumnos();
+void findname();
+void findid();
+void basedatos();
 int choice;
+char option;
+int c;
+string lastname;
+int findmat;
 
 void registrar();
 void buscar();
@@ -31,6 +35,8 @@ struct alumno {
 
 };
 
+alumno database[100];
+
 int main() {
 	locale::global(locale("spanish"));
 	menu();
@@ -38,352 +44,280 @@ int main() {
 }
 
 void menu() {
+
 	system("cls");
-	cout << "Inicio:" << endl;
+	cout << "Menu: " << endl;
 	cout << endl;
 
-	cout << "Entrar al Menu: " << endl;
-	cout << "1. Si" << endl;
-	cout << "2. No" << endl;
-	cin >> choice;
+	cout << "Entrar a: " << endl;
+	cout << "A. Alumnos " << endl;
+	cout << "B. Matriculas" << endl;
+	cout << "C. Base de Datos" << endl;
+	cout << "D. Salir del Menu " << endl;
+	cin >> option;
 
-	if (choice == 1) {
-		system("cls");
-		cout << "Menu: " << endl;
-		cout << endl;
+	if (option > 96) {
+		option -= 32;
+	}
 
-		cout << "Entrar a: " << endl;
-		cout << "A. Alumnos " << endl;
-		cout << "B. Matriculas" << endl;
-		cout << "C. Telefonos" << endl;
-		cout << "D. Emails" << endl;
-		cout << "E. Calificaciones" << endl;
-		cout << "F. Direcciones" << endl;
-		cout << "F. Salir del Menu " << endl;
-
-		char op;
-		cin >> op;
-		if (op > 96) {
-			op -= 32;
-		}
-		switch (op)
-		{
-		case 'A':
+	switch (option)
+	{
+	case 'A':
 			system("cls");
 			cout << "Lista De Alumnos: " << endl;
 			cout << endl;
 
-			name();
+			alumnos();
 
 			break;
-		case 'B':
+	case 'B':
 			system("cls");
 			cout << "Lista De Matriculas: " << endl;
 			cout << endl;
 
-			matricula();
+			alumnos();
 
 			break;
-		case 'C':
+	case 'C':
 			system("cls");
-			cout << "Lista De Telefonos: " << endl;
+			cout << "Base De Datos: " << endl;
 			cout << endl;
 
-			tel();
+			basedatos();
 
 			break;
-		case 'D':
-			system("cls");
-			cout << "Lista De Emails: " << endl;
-			cout << endl;
-
-			email();
-
-			break;
-		case 'E':
-			system("cls");
-			cout << "Lista De Calificaciones: " << endl;
-			cout << endl;
-
-			grades();
-
-			break;
-		case 'F':
-			system("cls");
-			cout << "Lista De Direcciones: " << endl;
-			cout << endl;
-
-			address();
-
-			break;
-		default:
+	default:
 			system("cls");
 			cout << "Ha salido del programa." << endl;
 			break;
 		}
 
+	system("pause > nul");
+}
+
+void alumnos(){
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Registrar" << endl;
+	cout << "2. Buscar " << endl;
+	cout << "3. Lista " << endl;
+	cin >> choice;
+
+
+	switch (choice)
+	{
+	case 1:
+		registrar();
+		break;
+
+	case 2:
+		buscar();
+		break;
+
+	case 3:
+		lista();
+		break;
+
+	}
+
+
+	cout << endl;
+	cout << "Regresar al Menu: " << endl;
+	cout << "1. Si " << endl;
+	cout << "2. No " << endl;
+	cin >> choice;
+
+	if (choice == 1) {
+		menu();
 	}
 	else {
-		cout << endl;
+		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
 
 	system("pause > nul");
-}
 
-void name() {
-
-	cout << "¿Que quiere hacer?" << endl;
-	cout << "1. Registrar" << endl;
-	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		registrar();
-		break;
-
-	case 2:
-		buscar();
-		break;
-
-	case 3:
-		lista();
-		break;
-
-	}
-
-
-	cout << endl;
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
-	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
-}
-
-void matricula() {
-
-	cout << "¿Que quiere hacer?" << endl;
-	cout << "1. Registrar" << endl;
-	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		registrar();
-		break;
-
-	case 2:
-		buscar();
-		break;
-
-	case 3:
-		lista();
-		break;
-
-	}
-
-	cout << endl;
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
-	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
-}
-
-void tel() {
-
-	cout << "¿Que quiere hacer?" << endl;
-	cout << "1. Registrar" << endl;
-	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		registrar();
-		break;
-
-	case 2:
-		buscar();
-		break;
-
-	case 3:
-		lista();
-		break;
-
-	}
-
-	cout << endl;
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
-	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
-}
-
-void email() {
-
-	cout << "¿Que quiere hacer?" << endl;
-	cout << "1. Registrar" << endl;
-	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		registrar();
-		break;
-
-	case 2:
-		buscar();
-		break;
-
-	case 3:
-		lista();
-		break;
-
-	}
-
-	cout << endl;
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
-	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
-}
-
-void grades() {
-
-	cout << "¿Que quiere hacer?" << endl;
-	cout << "1. Registrar" << endl;
-	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		registrar();
-		break;
-
-	case 2:
-		buscar();
-		break;
-
-	case 3:
-		lista();
-		break;
-
-	}
-   
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
-	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
-}
-
-void address() {
-
-	cout << "¿Que quiere hacer?" << endl;
-	cout << "1. Registrar" << endl;
-	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		registrar();
-		break;
-
-	case 2:
-		buscar();
-		break;
-
-	case 3:
-		lista();
-		break;
-
-	}
-
-	cout << endl;
-	cout << "Regresar al Menu: " << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No " << endl;
-	cin >> choice;
-
-	if (choice == 1) {
-		menu();
-	}
-	else {
-		system("cls");
-		cout << "Ha salido del programa." << endl;
-	}
 }
 
 void registrar() {
 	system("cls");
-	alumno database[100];
+
+	cout << "Registro: " << endl;
+	cout << endl;
 	cout << "Cuantos alumnos quiere registrar: ";
-	int c;
 	cin >> c;
-	int id = 0;
 	system("cls");
 
-	for (int i = 0; i < c; i++) {
+	for (int i = 1; i <= c; i++) {
+
+		cout << "Registro:" << endl;
+		cout << endl;
+
+		cout << "Ingresar Apellido(s): ";
+		cin.ignore();
+		getline(cin, database[i].ape);
+		cout << "Ingresar Nombre(s): ";
+		getline(cin, database[i].nom);
+		cout << "Ingresar Matricula: ";
+		cin >> database[i].mat;
+		cout << "Ingresar Email: ";
+		cin.ignore();
+		getline(cin, database[i].email);
+		cout << "Ingresar Telefono: ";
+		getline(cin, database[i].tel);
+		cout << "Ingresar Calle: ";
+		getline(cin, database[i].address);
+		cout << "Ingresar Numero de Casa: ";
+		cin >> database[i].num;
+		cout << "Calificacion 1: ";
+		cin >> database[i].cal;
+		cout << "Calificacion 2: ";
+		cin >> database[i].cal2;
+		cout << "Calificacion 3: ";
+		cin >> database[i].cal3;
+		system("cls");
 	}
+
 	lista();
-	system("pause > nul");
 }
 
 	void buscar() {
+		system("cls");
+		cout << "Search:" << endl;
+		cout << endl;
+
+		cout << "Buscar alumno por: " << endl;
+		cout << "1. Nombre" << endl;
+		cout << "2. Matricula" << endl;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			system("cls");
+			cout << "Search:" << endl;
+			cout << endl;
+
+			findname();
+			
+			break;
+		case 2:
+			system("cls");
+			cout << "Search:" << endl;
+			cout << endl;
+
+			findid();
+
+			break;
+		}
 		
+	}
+
+	void findname(){
+		cout << "Ingrese Apellido(s): ";
+		cin.ignore();
+		getline(cin, lastname);
+
+		bool found = false;
+		for (int i = 1; i <= c; i++) {
+
+			if (database[i].ape == lastname) {
+				cout << endl;
+				cout << "Alumno:" << endl;
+				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " << endl;
+				found = true;
+				break;
+			}
+		}
+
+		if (!found) {
+			cout << endl;
+			cout << "No había registros con esos apellidos." << endl;
+		}
+
+		system("pause > nul");
+	}
+
+	void findid() {
+		cout << "Ingrese Matricula: ";
+		cin >> findmat;
+
+		bool found = false;
+		for (int i = 1; i <= c; i++) {
+
+			if (database[i].mat == findmat) {
+				cout << endl;
+				cout << "Alumno:" << endl;
+				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " << endl;
+				found = true;
+				break;
+			}
+		}
+
+		if (!found) {
+			cout << endl;
+			cout << "No había registros con esa matricula." << endl;
+		}
+
+		system("pause > nul");
+
 	}
 
 	void lista() {
 
+		if (option == 65 ) {
+			system("cls");
+			names();
+		}
+		else {
+			system("cls");
+			matriculas();
+		}
+
+	}
+
+	void names() {
+		cout << "Lista De Alumnos:" << endl;
+
+		for (int i = 1; i <= c; i++) {
+
+			cout << endl;
+			cout << database[i].ape << " " << database[i].nom << endl;
+
+		}
+
+
+
+	}
+
+	void matriculas() {
+		cout << "Lista De Matriculas:" << endl;
+
+		for (int i = 1; i <= c; i++) {
+
+			cout << endl;
+			cout << database[i].mat << endl;
+
+		}
+
+	}
+
+	void grades() {
+
+	}
+
+	void basedatos() {
+
+		for (int i = 1; i <= c; i++) {
+			cout << endl;
+			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+				database[i].email << "  " << database[i].tel << "  " << database[i].num << " " << 
+				database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
+				database[i].cal3 << endl;
+
+		}
+
+		system("pause > nul");
+
+		menu();
 	}

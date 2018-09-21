@@ -7,6 +7,7 @@ void names();
 void matriculas();
 void grades();
 void alumnos();
+void plates();
 void findname();
 void findid();
 void basedatos();
@@ -75,7 +76,7 @@ void menu() {
 			cout << "Lista De Matriculas: " << endl;
 			cout << endl;
 
-			alumnos();
+			plates();
 
 			break;
 	case 'C':
@@ -120,6 +121,44 @@ void alumnos(){
 
 	}
 
+
+	cout << endl;
+	cout << "Regresar al Menu: " << endl;
+	cout << "1. Si " << endl;
+	cout << "2. No " << endl;
+	cin >> choice;
+
+	if (choice == 1) {
+		menu();
+	}
+	else {
+		system("cls");
+		cout << "Ha salido del programa." << endl;
+	}
+
+	system("pause > nul");
+
+}
+
+void plates() {
+
+	cout << "¿Que quiere hacer?" << endl;
+	cout << "1. Buscar " << endl;
+	cout << "2. Lista " << endl;
+	cin >> choice;
+
+
+	switch (choice)
+	{
+	case 1:
+		buscar();
+		break;
+
+	case 2:
+		lista();
+		break;
+
+	}
 
 	cout << endl;
 	cout << "Regresar al Menu: " << endl;

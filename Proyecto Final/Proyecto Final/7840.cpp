@@ -64,39 +64,39 @@ void menu() {
 	switch (option)
 	{
 	case 'A':
-			system("cls");
-			cout << "Lista De Alumnos: " << endl;
-			cout << endl;
+		system("cls");
+		cout << "Lista De Alumnos: " << endl;
+		cout << endl;
 
-			alumnos();
+		alumnos();
 
-			break;
+		break;
 	case 'B':
-			system("cls");
-			cout << "Lista De Matriculas: " << endl;
-			cout << endl;
+		system("cls");
+		cout << "Lista De Matriculas: " << endl;
+		cout << endl;
 
-			plates();
+		plates();
 
-			break;
+		break;
 	case 'C':
-			system("cls");
-			cout << "Base De Datos: " << endl;
-			cout << endl;
+		system("cls");
+		cout << "Base De Datos: " << endl;
+		cout << endl;
 
-			basedatos();
+		basedatos();
 
-			break;
+		break;
 	default:
-			system("cls");
-			cout << "Ha salido del programa." << endl;
-			break;
-		}
+		system("cls");
+		cout << "Ha salido del programa." << endl;
+		break;
+	}
 
 	system("pause > nul");
 }
 
-void alumnos(){
+void alumnos() {
 
 	cout << "¿Que quiere hacer?" << endl;
 	cout << "1. Registrar" << endl;
@@ -221,162 +221,151 @@ void registrar() {
 	lista();
 }
 
-	void buscar() {
+void buscar() {
+	system("cls");
+	cout << "Search:" << endl;
+	cout << endl;
+
+	cout << "Buscar alumno por: " << endl;
+	cout << "1. Nombre" << endl;
+	cout << "2. Matricula" << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
 		system("cls");
 		cout << "Search:" << endl;
 		cout << endl;
 
-		cout << "Buscar alumno por: " << endl;
-		cout << "1. Nombre" << endl;
-		cout << "2. Matricula" << endl;
-		cin >> choice;
+		findname();
 
-		switch (choice)
-		{
-		case 1:
-			system("cls");
-			cout << "Search:" << endl;
-			cout << endl;
+		break;
+	case 2:
+		system("cls");
+		cout << "Search:" << endl;
+		cout << endl;
 
-			findname();
-			
-			break;
-		case 2:
-			system("cls");
-			cout << "Search:" << endl;
-			cout << endl;
+		findid();
 
-			findid();
-
-			break;
-		}
-		
+		break;
 	}
 
-	void findname(){
-		cout << "Ingrese Apellido(s): ";
-		cin.ignore();
-		getline(cin, lastname);
+}
 
-		bool found = false;
-		for (int i = 1; i <= id; i++) {
+void findname() {
 
-			int a = 1;
-			if (database[a].ape == lastname) {
-				cout << endl;
-				cout << "Alumno:" << endl;
-				cout << database[a].mat << "  " << database[a].ape << " " << database[a].nom << "  " << endl;
-				found = true;
-				a++;
-				break;
-			}
+	cout << "Ingrese Apellido(s): ";
+	cin.ignore();
+	getline(cin, lastname);
 
-			if (!found) {
-				cout << endl;
-				cout << "No había registros con esos apellidos." << endl;
-			}
+	bool found = false;
 
-			system("pause > nul");
+	for (int i = 1; i < id; i++) {
+
+		if (database[i].ape == lastname) {
+			cout << endl;
+			cout << "Alumno:" << endl;
+			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " << endl;
+			found = true;
+			break;
 		}
-	}
-
-	void findid(){
-
-			cout << "Ingrese Matricula: ";
-			cin >> findmat;
-
-			bool found = false;
-			for (int i = 1; i <= id; i++) {
-
-				int b = 1;
-				if (database[b].mat == findmat) {
-					cout << endl;
-					cout << "Alumno:" << endl;
-					cout << database[b].mat << "  " << database[b].ape << " " << database[b].nom << "  " << endl;
-					b++;
-					found = true;
-					break;
-				}
-			}
 
 		if (!found) {
 			cout << endl;
-			cout << "No había registros con esa matricula." << endl;
+			cout << "No había registros con esos apellidos." << endl;
 		}
 
 		system("pause > nul");
-
 	}
+}
 
-	void lista() {
+void findid() {
 
-		if (option == 65 ) {
-			system("cls");
-			names();
-		}
-		else {
-			system("cls");
-			matriculas();
-		}
+	cout << "Ingrese Matricula: ";
+	cin >> findmat;
 
-	}
+	bool found = false;
 
-	void names() {
-		cout << "Lista De Alumnos:" << endl;
+	for (int i = 1; i < id; i++) {
 
-		int f = 1;
-
-		for (int i = 1; i <= id; i++) {
-
-			
+		if (database[i].mat == findmat) {
 			cout << endl;
-			cout << database[f].ape << " " << database[f].nom << endl;
-			f++;
-			
-
+			cout << "Alumno:" << endl;
+			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " << endl;
+			found = true;
+			break;
 		}
+	}
+
+	if (!found) {
+		cout << endl;
+		cout << "No había registros con esa matricula." << endl;
+	}
+
+	system("pause > nul");
+
+}
+
+void lista() {
+
+	if (option == 65) {
+		system("cls");
+		names();
+	}
+	else {
+		system("cls");
+		matriculas();
+	}
+
+}
+
+void names() {
+	cout << "Lista De Alumnos:" << endl;
+
+	for (int i = 1; i < id; i++) {
 
 
+		cout << endl;
+		cout << database[i].ape << " " << database[i].nom << endl;
+		
+	}
+
+
+
+}
+
+void matriculas() {
+	cout << "Lista De Matriculas:" << endl;
+
+	for (int i = 1; i < id; i++) {
+
+
+		cout << endl;
+		cout << database[i].mat << endl;
+		
+	}
+
+}
+
+void grades() {
+
+}
+
+void basedatos() {
+
+	for (int i = 1; i < id; i++) {
+
+
+		cout << endl;
+		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
+			database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
+			database[i].cal3 << endl;
 
 	}
 
-	void matriculas() {
-		cout << "Lista De Matriculas:" << endl;
+	system("pause > nul");
 
-		int d = 1;
-
-		for (int i = 1; i <= id; i++) {
-
-			
-			cout << endl;
-			cout << database[d].mat << endl;
-			d++;
-
-		}
-
-	}
-
-	void grades() {
-
-	}
-
-	void basedatos() {
-
-		int e = 1;
-
-		for (int i = 1; i < id ; i++) {
-
-			
-			cout << endl;
-			cout << database[e].mat << "  " << database[e].ape << " " << database[e].nom << "  " <<
-				database[e].email << "  " << database[e].tel << "  " << database[e].num << " " << 
-				database[e].address << "  " << database[e].cal << "  " << database[e].cal2 << "  " <<
-				database[e].cal3 << endl;
-			e++;
-
-		}
-
-		system("pause > nul");
-
-		menu();
-	}
+	menu();
+}

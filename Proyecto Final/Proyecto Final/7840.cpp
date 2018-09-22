@@ -261,7 +261,9 @@ void findname() {
 
 	bool found = false;
 
-	for (int i = 1; i < id; i++) {
+	int i = 1;
+
+	while (i < id ) {
 
 		if (database[i].ape == lastname) {
 			cout << endl;
@@ -276,6 +278,8 @@ void findname() {
 			cout << "No había registros con esos apellidos." << endl;
 		}
 
+		i++;
+
 		system("pause > nul");
 	}
 }
@@ -287,7 +291,9 @@ void findid() {
 
 	bool found = false;
 
-	for (int i = 1; i < id; i++) {
+	int i = 1;
+
+	while (i < id) {
 
 		if (database[i].mat == findmat) {
 			cout << endl;
@@ -302,6 +308,8 @@ void findid() {
 		cout << endl;
 		cout << "No había registros con esa matricula." << endl;
 	}
+
+	i++;
 
 	system("pause > nul");
 

@@ -21,6 +21,7 @@ int findmat;
 void registrar();
 void buscar();
 void lista();
+void modificar();
 
 struct alumno {
 	string ape;
@@ -135,8 +136,6 @@ void alumnos() {
 		system("cls");
 		cout << "Ha salido del programa." << endl;
 	}
-
-	system("pause > nul");
 
 }
 
@@ -263,7 +262,7 @@ void findname() {
 
 	int i = 1;
 
-	while (i < id ) {
+	while (i < id) {
 
 		if (database[i].ape == lastname) {
 			cout << endl;
@@ -273,15 +272,16 @@ void findname() {
 			break;
 		}
 
+		i++;
+	}
+
 		if (!found) {
 			cout << endl;
 			cout << "No había registros con esos apellidos." << endl;
 		}
 
-		i++;
+		modificar();
 
-		system("pause > nul");
-	}
 }
 
 void findid() {
@@ -302,17 +302,16 @@ void findid() {
 			found = true;
 			break;
 		}
+
+		i++;
 	}
 
-	if (!found) {
-		cout << endl;
-		cout << "No había registros con esa matricula." << endl;
-	}
+		if (!found) {
+			cout << endl;
+			cout << "No había registros con esa matricula." << endl;
+		}
 
-	i++;
-
-	system("pause > nul");
-
+		modificar();
 }
 
 void lista() {
@@ -339,8 +338,6 @@ void names() {
 		
 	}
 
-
-
 }
 
 void matriculas() {
@@ -353,6 +350,11 @@ void matriculas() {
 		cout << database[i].mat << endl;
 		
 	}
+
+}
+
+void modificar() {
+
 
 }
 

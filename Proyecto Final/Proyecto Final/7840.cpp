@@ -322,6 +322,7 @@ void findname() {
 		cout << "H. Calificacion 1" << endl;
 		cout << "I. Calificacion 2" << endl;
 		cout << "J. Calificacion 3" << endl;
+		cout << "K. Eliminar Alumno" << endl;
 		cin >> option;
 
 		if (option > 96) {
@@ -450,6 +451,31 @@ void findname() {
 			cin >> database[i].cal3;
 
 			break;
+		case 'K':
+			system("cls");
+
+			for (i = i; i < id; i++) {
+				database[i].ape = database[i + 1].ape;
+				database[i].nom = database[i + 1].nom;
+				database[i].mat = database[i + 1].mat;
+				database[i].email = database[i + 1].email;
+				database[i].tel = database[i + 1].tel;
+				database[i].address = database[i + 1].address;
+				database[i].num = database[i + 1].num;
+				database[i].cal = database[i + 1].cal;
+				database[i].cal2 = database[i + 1].cal2;
+				database[i].cal3 = database[i + 1].cal3;
+			}
+
+			id--;
+			cout << "Eliminar:" << endl;
+			cout << endl;
+
+			cout << "El alumno ha sido eliminado con exito.";
+
+			system("pause > nul");
+			menu();
+			break;
 		default :
 
 			cout << "Ingrese un caracter valido.";
@@ -554,6 +580,7 @@ void findid() {
 			cout << "H. Calificacion 1" << endl;
 			cout << "I. Calificacion 2" << endl;
 			cout << "J. Calificacion 3" << endl;
+			cout << "K. Eliminar Alumno" << endl;
 			cin >> option;
 
 			if (option > 96) {
@@ -682,6 +709,38 @@ void findid() {
 				cin >> database[i].cal3;
 
 				break;
+			case 'K':
+				system("cls");
+
+				for (i = i; i < id; i++) {
+					database[i].ape = database[i + 1].ape;
+					database[i].nom = database[i + 1].nom;
+					database[i].mat = database[i + 1].mat;
+					database[i].email = database[i + 1].email;
+					database[i].tel = database[i + 1].tel;
+					database[i].address = database[i + 1].address;
+					database[i].num = database[i + 1].num;
+					database[i].cal = database[i + 1].cal;
+					database[i].cal2 = database[i + 1].cal2;
+					database[i].cal3 = database[i + 1].cal3;
+				}
+
+				id--;
+				cout << "Eliminar:" << endl;
+				cout << endl;
+
+				cout << "El alumno ha sido eliminado con exito.";
+
+				system("pause > nul");
+				menu();
+				
+				break;
+			
+			default:
+
+				cout << "Ingrese un caracter valido.";
+				cout << endl;
+
 
 			}
 

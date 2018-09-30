@@ -177,8 +177,6 @@ void plates() {
 	else {
 		system("cls");
 		cout << "Ha salido del programa." << endl;
-
-		system("pause > nul");
 	}
 
 }

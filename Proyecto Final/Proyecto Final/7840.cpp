@@ -16,7 +16,7 @@ char option;
 int c;
 int id = 1;
 string lastname;
-int findmat;
+string findmat;
 
 void registrar();
 void buscar();
@@ -26,11 +26,11 @@ void modificar();
 struct alumno {
 	string ape;
 	string nom;
-	int mat;
+	string mat;
 	string email;
 	string tel;
 	string address;
-	int num;
+	string num;
 	float cal;
 	float cal2;
 	float cal3;
@@ -201,7 +201,7 @@ void registrar() {
 		cout << "Ingresar Nombre(s): ";
 		getline(cin, database[id].nom);
 		cout << "Ingresar Matricula: ";
-		cin >> database[id].mat;
+		getline(cin, database[id].mat);
 		cout << "Ingresar Email: ";
 		cin.ignore();
 		getline(cin, database[id].email);
@@ -210,7 +210,7 @@ void registrar() {
 		cout << "Ingresar Calle: ";
 		getline(cin, database[id].address);
 		cout << "Ingresar Numero de Casa: ";
-		cin >> database[id].num;
+		getline(cin, database[id].num);
 		cout << "Calificacion 1: ";
 		cin >> database[id].cal;
 		cout << "Calificacion 2: ";

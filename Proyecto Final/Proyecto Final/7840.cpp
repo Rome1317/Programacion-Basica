@@ -8,15 +8,15 @@ void matriculas();
 void grades();
 void alumnos();
 void plates();
-void findname();
-void findid();
 void basedatos();
 int choice;
 char option;
 int c;
 int id = 1;
+
 string lastname;
 string findmat;
+bool found = false;
 
 void registrar();
 void buscar();
@@ -203,7 +203,6 @@ void registrar() {
 		cout << "Ingresar Matricula: ";
 		getline(cin, database[id].mat);
 		cout << "Ingresar Email: ";
-		cin.ignore();
 		getline(cin, database[id].email);
 		cout << "Ingresar Telefono: ";
 		getline(cin, database[id].tel);
@@ -234,6 +233,8 @@ void buscar() {
 	cout << "2. Matricula" << endl;
 	cin >> choice;
 
+	int i = 1;
+
 	switch (choice)
 	{
 	case 1:
@@ -241,7 +242,32 @@ void buscar() {
 		cout << "Search:" << endl;
 		cout << endl;
 
-		findname();
+		cout << "Ingrese Apellido(s): ";
+		cin.ignore();
+		getline(cin, lastname);
+
+		while (i < id) {
+
+			if (database[i].ape == lastname) {
+				cout << endl;
+				cout << "Alumno:" << endl;
+
+				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+					database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
+					database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
+					database[i].cal3 << endl;
+
+				found = true;
+				break;
+			}
+
+			i++;
+		}
+
+		if (!found) {
+			cout << endl;
+			cout << "No había registros con esos apellidos." << endl;
+		}
 
 		break;
 	case 2:
@@ -249,304 +275,34 @@ void buscar() {
 		cout << "Search:" << endl;
 		cout << endl;
 
-		findid();
+		cout << "Ingrese Matricula: ";
+		cin.ignore();
+		getline(cin, findmat);
 
-		break;
-	}
+		while (i < id) {
 
-}
+			if (database[i].mat == findmat) {
+				cout << endl;
+				cout << "Alumno:" << endl;
 
-void findname() {
+				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+					database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
+					database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
+					database[i].cal3 << endl;
 
-
-	cout << "Ingrese Apellido(s): ";
-	cin.ignore();
-	getline(cin, lastname);
-
-	bool found = false;
-
-	int i = 1;
-
-	while (i < id) {
-
-		if (database[i].ape == lastname) {
-			cout << endl;
-			cout << "Alumno:" << endl;
-
-			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
-				database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
-				database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-				database[i].cal3 << endl;
-
-			found = true;
-			break;
-		}
-
-		i++;
-	}
-
-	if (!found) {
-		cout << endl;
-		cout << "No había registros con esos apellidos." << endl;
-	}
-
-	cout << endl;
-	cout << "Quieres modificar algo?" << endl;
-	cout << "1. Si " << endl;
-	cout << "2. No" << endl;
-	cin >> choice;
-
-	if (choice == 1){
-
-		system("cls");
-
-		cout << "Alumno:" << endl;
-		cout << endl;
-
-		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
-			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
-			database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-			database[i].cal3 << endl;
-		cout << endl;
-
-		cout << "Modificar: " << endl;
-		cout << "A. Apellido(s)" << endl;
-		cout << "B. Nombre(s)" << endl;
-		cout << "C. Matricula" << endl;
-		cout << "D. Email" << endl;
-		cout << "E. Telefono" << endl;
-		cout << "F. Calle" << endl;
-		cout << "G. Numero de Casa" << endl;
-		cout << "H. Calificacion 1" << endl;
-		cout << "I. Calificacion 2" << endl;
-		cout << "J. Calificacion 3" << endl;
-		cout << "K. Eliminar Alumno" << endl;
-		cin >> option;
-
-		if (option > 96) {
-			option -= 32;
-		}
-
-		switch (option)
-		{
-		case 'A':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antiguo Apellido: " << database[i].ape << endl;
-			cout << endl;
-			cout << "Nuevo Apellido: ";
-			cin.ignore();
-			getline(cin, database[i].ape);
-
-			break;
-		case 'B':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antiguo Nombre: " << database[i].nom << endl;
-			cout << endl;
-			cout << "Nuevo Nombre: ";
-			cin.ignore();
-			getline(cin, database[i].nom);
-
-			break;
-		case 'C':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antigua Matricula: " << database[i].mat << endl;
-			cout << endl;
-			cout << "Nueva Matricula: ";
-			cin.ignore();
-			cin >> database[i].mat;
-
-			break;
-		case 'D':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antiguo Email: " << database[i].email << endl;
-			cout << endl;
-			cout << "Nuevo Email: ";
-			cin.ignore();
-			getline(cin, database[i].email);
-
-			break;
-		case 'E':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antiguo Telefono: " << database[i].ape << endl;
-			cout << endl;
-			cout << "Nuevo Telefono: ";
-			cin.ignore();
-			getline(cin, database[i].tel);
-
-			break;
-		case 'F':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antigua Calle: " << database[i].address << endl;
-			cout << endl;
-			cout << "Nueva Calle: ";
-			cin.ignore();
-			getline(cin, database[i].address);
-
-			break;
-		case 'G':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antiguo Numero de Casa: " << database[i].num << endl;
-			cout << endl;
-			cout << "Numero de Casa: ";
-			cin.ignore();
-			cin >> database[i].num;
-
-			break;
-		case 'H':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antigua Calificacion 1: " << database[i].cal << endl;
-			cout << endl;
-			cout << "Calificacion 1: ";
-			cin.ignore();
-			cin >> database[i].cal;
-
-			break;
-		case 'I':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antigua Calificacion 2: " << database[i].cal2 << endl;
-			cout << endl;
-			cout << "Calificacion 2: ";
-			cin.ignore();
-			cin >> database[i].cal2;
-
-			break;
-		case 'J':
-			system("cls");
-			cout << "Modificar:" << endl;
-			cout << endl;
-
-			cout << "Antigua Calificacion 3: " << database[i].cal3 << endl;
-			cout << endl;
-			cout << "Calificacion 3: ";
-			cin.ignore();
-			cin >> database[i].cal3;
-
-			break;
-		case 'K':
-			system("cls");
-
-			for (i = i; i < id; i++) {
-				database[i].ape = database[i + 1].ape;
-				database[i].nom = database[i + 1].nom;
-				database[i].mat = database[i + 1].mat;
-				database[i].email = database[i + 1].email;
-				database[i].tel = database[i + 1].tel;
-				database[i].address = database[i + 1].address;
-				database[i].num = database[i + 1].num;
-				database[i].cal = database[i + 1].cal;
-				database[i].cal2 = database[i + 1].cal2;
-				database[i].cal3 = database[i + 1].cal3;
+				found = true;
+				break;
 			}
 
-			id--;
-			cout << "Eliminar:" << endl;
-			cout << endl;
-
-			cout << "El alumno ha sido eliminado con exito.";
-
-			system("pause > nul");
-			menu();
-			break;
-		default :
-
-			cout << "Ingrese un caracter valido.";
-			cout << endl;
-
+			i++;
 		}
-
-		cout << endl;
-
-		cout << "Alumno:" << endl;
-		cout << endl;
-
-		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
-			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
-			database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-			database[i].cal3 << endl;
-
-		cout << endl;
-		cout << "Quiere modificar algo mas?" << endl;
-		cout << "1. Si" << endl;
-		cout << "2. No" << endl;
-		cin >> choice;
-
-		if (choice == 1) {
-
-			modificar();
-
-		}
-		else {
-
-			menu();
-		}
-	
-		}
-	else {
-
-		menu();
-	 
-	}
-
-}
-
-void findid() {
-
-	cout << "Ingrese Matricula: ";
-	cin >> findmat;
-
-	bool found = false;
-
-	int i = 1;
-
-	while (i < id) {
-
-		if (database[i].mat == findmat) {
-			cout << endl;
-			cout << "Alumno:" << endl;
-
-			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
-				database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
-				database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-				database[i].cal3 << endl;
-
-			found = true;
-			break;
-		}
-
-		i++;
-	}
 
 		if (!found) {
 			cout << endl;
 			cout << "No había registros con esa matricula." << endl;
 		}
+		break;
+	}
 
 		cout << endl;
 		cout << "Quieres modificar algo?" << endl;
@@ -594,7 +350,7 @@ void findid() {
 
 				cout << "Antiguo Apellido: " << database[i].ape << endl;
 				cout << endl;
-				cout << "Apellido(s): ";
+				cout << "Nuevo Apellido: ";
 				cin.ignore();
 				getline(cin, database[i].ape);
 
@@ -606,7 +362,7 @@ void findid() {
 
 				cout << "Antiguo Nombre: " << database[i].nom << endl;
 				cout << endl;
-				cout << "Nombre(s): ";
+				cout << "Nuevo Nombre: ";
 				cin.ignore();
 				getline(cin, database[i].nom);
 
@@ -618,9 +374,9 @@ void findid() {
 
 				cout << "Antigua Matricula: " << database[i].mat << endl;
 				cout << endl;
-				cout << "Matricula: ";
+				cout << "Nueva Matricula: ";
 				cin.ignore();
-				cin >> database[i].mat;
+				getline(cin, database[i].mat);
 
 				break;
 			case 'D':
@@ -630,7 +386,7 @@ void findid() {
 
 				cout << "Antiguo Email: " << database[i].email << endl;
 				cout << endl;
-				cout << "Email: ";
+				cout << "Nuevo Email: ";
 				cin.ignore();
 				getline(cin, database[i].email);
 
@@ -642,7 +398,7 @@ void findid() {
 
 				cout << "Antiguo Telefono: " << database[i].ape << endl;
 				cout << endl;
-				cout << "Telefono: ";
+				cout << "Nuevo Telefono: ";
 				cin.ignore();
 				getline(cin, database[i].tel);
 
@@ -654,7 +410,7 @@ void findid() {
 
 				cout << "Antigua Calle: " << database[i].address << endl;
 				cout << endl;
-				cout << "Calle: ";
+				cout << "Nueva Calle: ";
 				cin.ignore();
 				getline(cin, database[i].address);
 
@@ -668,7 +424,7 @@ void findid() {
 				cout << endl;
 				cout << "Numero de Casa: ";
 				cin.ignore();
-				cin >> database[i].num;
+				getline(cin,database[i].num);
 
 				break;
 			case 'H':
@@ -731,14 +487,11 @@ void findid() {
 
 				system("pause > nul");
 				menu();
-				
 				break;
-			
 			default:
 
 				cout << "Ingrese un caracter valido.";
 				cout << endl;
-
 
 			}
 
@@ -772,9 +525,10 @@ void findid() {
 		else {
 
 			menu();
+
 		}
-        
-}
+
+	}
 
 void lista() {
 

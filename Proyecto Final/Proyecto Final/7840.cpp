@@ -229,7 +229,7 @@ void buscar() {
 	cout << endl;
 
 	cout << "Buscar alumno por: " << endl;
-	cout << "1. Nombre" << endl;
+	cout << "1. Apellidos" << endl;
 	cout << "2. Matricula" << endl;
 	cin >> choice;
 

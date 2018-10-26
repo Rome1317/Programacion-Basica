@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 void menu();
 void names();
 void matriculas();
-void grades();
 void alumnos();
 void plates();
 void basedatos();
@@ -22,6 +22,8 @@ void registrar();
 void buscar();
 void lista();
 void modificar();
+void archivo();
+void lectura();
 
 struct alumno {
 	string ape;
@@ -42,6 +44,9 @@ alumno database[100];
 
 void main() {
 	locale::global(locale("spanish"));
+
+
+
 	menu();
 }
 
@@ -97,10 +102,12 @@ void menu() {
 	default:
 		system("cls");
 		cout << "Ha salido del programa." << endl;
+
+		system("pause > nul");
 		break;
 	}
-
-	system("pause > nul");
+	
+	archivo();
 }
 
 void alumnos() {
@@ -177,6 +184,7 @@ void plates() {
 	else {
 		system("cls");
 		cout << "Ha salido del programa." << endl;
+		archivo();
 	}
 
 }
@@ -216,6 +224,13 @@ void registrar() {
 		cin >> database[id].cal2;
 		cout << "Calificacion 3: ";
 		cin >> database[id].cal3;
+
+		database[id].promedio = database[id].cal * 30 / 100 + database[id].cal2 * 45 / 100 + database[id].cal3 * 25 / 100;
+
+		cout << "Promedio: " << database[id].promedio;
+
+		system("pause>nul");
+
 		id++;
 		system("cls");
 	}
@@ -255,7 +270,7 @@ void buscar() {
 				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
 					database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 					database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-					database[i].cal3 << endl;
+					database[i].cal3 << "  " << database[i].promedio << endl;
 
 				found = true;
 				break;
@@ -288,7 +303,7 @@ void buscar() {
 				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
 					database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 					database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-					database[i].cal3 << endl;
+					database[i].cal3 << "  " << database[i].promedio << endl;
 
 				found = true;
 				break;
@@ -300,6 +315,7 @@ void buscar() {
 		if (!found) {
 			cout << endl;
 			cout << "No había registros con esa matricula." << endl;
+
 		}
 		break;
 	}
@@ -320,7 +336,7 @@ void buscar() {
 			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
 				database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 				database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-				database[i].cal3 << endl;
+				database[i].cal3 << "  " << database[i].promedio << endl;
 			cout << endl;
 
 			cout << "Modificar: " << endl;
@@ -438,6 +454,9 @@ void buscar() {
 				cin.ignore();
 				cin >> database[i].cal;
 
+				database[i].promedio = database[i].cal * 30 / 100 + database[i].cal2 * 45 / 100 + database[i].cal3 * 25 / 100;
+
+
 				break;
 			case 'I':
 				system("cls");
@@ -450,6 +469,8 @@ void buscar() {
 				cin.ignore();
 				cin >> database[i].cal2;
 
+				database[i].promedio = database[i].cal * 30 / 100 + database[id].cal2 * 45 / 100 + database[i].cal3 * 25 / 100;
+
 				break;
 			case 'J':
 				system("cls");
@@ -461,6 +482,8 @@ void buscar() {
 				cout << "Calificacion 3: ";
 				cin.ignore();
 				cin >> database[i].cal3;
+
+				database[i].promedio = database[i].cal * 30 / 100 + database[i].cal2 * 45 / 100 + database[i].cal3 * 25 / 100;
 
 				break;
 			case 'K':
@@ -477,6 +500,7 @@ void buscar() {
 					database[i].cal = database[i + 1].cal;
 					database[i].cal2 = database[i + 1].cal2;
 					database[i].cal3 = database[i + 1].cal3;
+					database[i].promedio = database[i + 1].promedio;
 				}
 
 				id--;
@@ -492,7 +516,7 @@ void buscar() {
 
 				cout << "Ingrese un caracter valido.";
 				cout << endl;
-
+				cin >> option;
 			}
 
 			cout << endl;
@@ -503,7 +527,7 @@ void buscar() {
 			cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
 				database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 				database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-				database[i].cal3 << endl;
+				database[i].cal3 << "  " << database[i].promedio << endl;
 
 			cout << endl;
 			cout << "Quiere modificar algo mas?" << endl;
@@ -574,10 +598,6 @@ void modificar() {
 	buscar();
 }
 
-void grades() {
-
-}
-
 void basedatos() {
 
 	for (int i = 1; i < id; i++) {
@@ -587,11 +607,58 @@ void basedatos() {
 		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
 			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 			database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
-			database[i].cal3 << endl;
-
+			database[i].cal3 << "  " << database[i].promedio << endl;
 	}
 
 	system("pause > nul");
 
 	menu();
+}
+
+void archivo() {
+
+	ofstream archivo;
+	archivo.open("Base de Datos.txt"); 
+
+	archivo << "Lista de Alumnos: " << endl;
+	cout << endl;
+
+	for (int i = 1; i < id; i++) {
+
+		    archivo << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
+			database[i].address << "  " << database[i].cal << "  " << database[i].cal2 << "  " <<
+			database[i].cal3 << "  "  << database[i].promedio << endl;
+	}
+
+	archivo.close();
+	
+	lectura();
+}
+
+void lectura() {
+
+	ofstream datos;
+	datos.open("Alumnos.txt");
+
+	datos << "Registro: " << endl;
+	cout << endl;
+
+	for (int i = 1; i < id; i++) {
+
+		datos << database[i].mat << endl;
+		datos << database[i].ape << endl;
+		datos << database[i].nom << endl;
+		datos << database[i].email << endl;
+		datos << database[i].tel << endl;
+		datos << database[i].num << endl;
+		datos << database[i].address << endl;
+		datos << database[i].cal << endl;
+		datos << database[i].cal2 << endl;
+		datos << database[i].cal3 << endl;
+		datos << database[i].promedio << endl;
+		cout << endl;
+	}
+
+	datos.close();
 }

@@ -45,8 +45,33 @@ alumno database[100];
 void main() {
 	locale::global(locale("spanish"));
 
+	string alumno;
+	ifstream lectura;
+	int t = 0;
 
+	lectura.open("alumnos.txt");
+	if (lectura.is_open()) {
 
+		while (!lectura.eof()) {
+			getline(lectura, alumno);
+			if (t == 1) {
+				cout << endl;
+				
+			}
+			if (t % 12 == 0 && t != 0) {
+				cout << endl;
+			}
+			cout << alumno << endl;
+			t++;
+		}
+	}
+	else {
+		cout << "Archivo inexistente o problemas para abrirlo." << endl;
+	}
+	
+	lectura.close();
+
+	system("pause > nul");
 	menu();
 }
 

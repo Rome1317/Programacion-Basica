@@ -14,21 +14,23 @@ Las teclas que puede ingresar pueden ser desde letras a numeros.
 REQUISITOS GENERALES
 - Este programa solo se puede utilizar en Windows.
 
------MENU---------------------------------------------------------
+MENU
+--------------------------------------------------------------------
 En el menu se muestra las opciones que el usuario puede elegir.
 
 Este contiene:
-A. Alumnos
-B. Matriculas
-C. Base de Datos
-D. Modificar
-E. Manual de Usuario
-F. Salir
+- A. Alumnos
+- B. Matriculas
+- C. Base de Datos
+- D. Modificar
+- E. Manual de Usuario
+- F. Salir
 
 El usuario ingresa la letra que corresponde a la opcion.
 La letra ingresada puede estar en mayuscula o minuscula.
 
------ALUMNOS------------------------------------------------------
+ALUMNOS
+----------------------------------------------------------------------
 Al ingresar a Alumnos, el usuario puede registrar, buscar y ver alumnos.
 
 Este contiene:
@@ -51,7 +53,8 @@ Regresar al Menu:
 Si la tecla ingresada es 1, el programa vuelve a menu.
 Si la tecla ingresada es 2, el programa se termina y se guarda en un archivo los cambios realizados.
 
------MATRICULAS---------------------------------------------------
+MATRICULAS
+----------------------------------------------------------------------------
 Al ingresar a Matriculas, el usuario puede buscar a alumnos y ver matriculas.
 
 Este contiene:
@@ -63,52 +66,56 @@ El usuario ingresa el numero que corresponde a la opcion.
 BUSCAR
 LISTA
 
------BASE DE DATOS------------------------------------------------
+BASE DE DATOS
+----------------------------------------------------------------------------
 Al ingresar a Base de Datos, el usuario puede ver la lista de alumnos registrados con todos sus datos.
 
 La lista se muestra horizontalmente en este orden:
--Matricula
--Apellido(s)
--Nombre(s)
--Email
--Telefono
--Numero de Casa
--Calle
--Colonia
--Calificacion 1
--Calificacion 2
--Calificacion 3
--Promedio
+- Matricula
+- Apellido(s)
+- Nombre(s)
+- Email
+- Telefono
+- Numero de Casa
+- Calle
+- Colonia
+- Calificacion 1
+- Calificacion 2
+- Calificacion 3
+- Promedio
 
 Para volver al menu, el usuario presiona ENTER.
 
------MODIFICAR----------------------------------------------------
+MODIFICAR
+----------------------------------------------------------------------------------------
 Al ingresar a Modificar, el usuario aqui busca, modifica o elimina los datos de los alumnos.
 El usuario puede modificar todos los datos ingresados de un alumno.
 
 Este contiene:
 Modificar:
-A. Apellido(s)
-B. Nombre(s)
-C. Matricula
-D. Email
-E. Telefono
-F. Calle
-G. Colonia
-H. Numero de Casa
-I. Calificacion 1
-J. Calificacion 2
-K. Calificacion 3
-L. Eliminar alumno
+- A. Apellido(s)
+- B. Nombre(s)
+- C. Matricula
+- D. Email
+- E. Telefono
+- F. Calle
+- G. Colonia
+- H. Numero de Casa
+- I. Calificacion 1
+- J. Calificacion 2
+- K. Calificacion 3
+- L. Eliminar alumno
 
 ELIMINAR
 
------MANUAL DE USUARIO--------------------------------------------
+MANUAL DE USUARIO
+------------------------------------------------------------------------------
 Al ingresar a Manual de Usuario, el programa abre este archivo para la lectura del usuario.
 
 Para volver al menu, el usuario presiona ENTER.
 
------SALIR--------------------------------------------------------
+SALIR
+--------------------------------------------------------------------------------
 Al ingresar a Salir, el programa se cierra.
 
 Aqui se guarda todo lo hecho por el usuario en un archivo excel para la lectura del mismo.

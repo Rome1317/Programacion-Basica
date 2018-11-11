@@ -14,10 +14,13 @@ int choice;
 char option;
 int c;
 int id = 1;
+int range;
+int z;
 
 string lastname;
 string findmat;
 bool found = false;
+bool valid = false;
 
 void registrar();
 void buscar();
@@ -25,6 +28,7 @@ void lista();
 void modificar();
 void archivo();
 void excel();
+void manual();
 
 struct alumno {
 	string ape;
@@ -84,7 +88,8 @@ void menu() {
 	cout << "B. Matrículas" << endl;
 	cout << "C. Base de Datos" << endl;
 	cout << "D. Modificar" << endl;
-	cout << "E. Salir del Menu " << endl;
+	cout << "E. Manual de Usuario" << endl;
+	cout << "F. Salir del Menu " << endl;
 	cin >> option;
 
 	if (option > 96) {
@@ -95,7 +100,7 @@ void menu() {
 	{
 	case 'A':
 		system("cls");
-		cout << "Lista De Alumnos: " << endl;
+		cout << "Alumnos: " << endl;
 		cout << endl;
 
 		alumnos();
@@ -103,7 +108,7 @@ void menu() {
 		break;
 	case 'B':
 		system("cls");
-		cout << "Lista De Matrículas: " << endl;
+		cout << "Matrículas: " << endl;
 		cout << endl;
 
 		plates();
@@ -120,6 +125,12 @@ void menu() {
 	case 'D':
 
 		modificar();
+
+		break;
+	case 'E':
+		system("cls");
+
+		manual();
 
 		break;
 	default:
@@ -230,12 +241,51 @@ void registrar() {
 		getline(cin, database[id].ape);
 		cout << "Ingresar Nombre(s): ";
 		getline(cin, database[id].nom);
+
 		cout << "Ingresar Matrícula: ";
 		getline(cin, database[id].mat);
+
+		for (int j = 1; j < id ; j++) {
+			
+			while ( database[id].mat == database[j].mat) {
+				cout << "Esta matrícula ya existe. Intenta de nuevo." << endl;
+				getline(cin, database[id].mat);
+			}
+		}
+
 		cout << "Ingresar Email: ";
 		getline(cin, database[id].email);
+
+		range = database[id].email.size();
+		
 		cout << "Ingresar Teléfono: ";
 		getline(cin, database[id].tel);
+
+		range = database[id].tel.size();
+	    z = 0;
+
+		while (z < range) {
+
+			if (database[id].tel[z] < 48 || database[id].tel[z] > 57) {
+
+				cout << "Ingresa solo números." << endl;
+				getline(cin, database[id].tel);
+				range = database[id].tel.size();
+				z = -1;
+
+			}
+
+			z++;
+		}
+
+
+	    while (range < 8 || range > 11) {
+
+				cout << "El teléfono debe tener al menos 8 digitos y ser menor a 12." << endl;
+				getline(cin, database[id].tel);
+				range = database[id].tel.size();
+		}
+
 		cout << "Ingresar Calle: ";
 		getline(cin, database[id].address);
 		cout << "Ingresar Colonia: ";
@@ -249,7 +299,7 @@ void registrar() {
 		cout << "Calificación 3: ";
 		cin >> database[id].cal3;
 
-		if (database[id].cal == -1 || database[id].cal2 == -1 || database[id].cal3 == -1) {
+		if (database[id].cal < 0 || database[id].cal2 < 0 || database[id].cal3 < 0 ) {
 
 			database[id].promedio = 0;
 		}
@@ -450,7 +500,6 @@ void buscar() {
 			cout << "Nuevo Teléfono: ";
 			cin.ignore();
 			getline(cin, database[i].tel);
-
 			break;
 		case 'F':
 			system("cls");
@@ -711,5 +760,31 @@ void excel() {
 	}
 
 	datos.close();
+
+}
+
+void manual(){
+
+	ifstream read;
+	string line;
+
+	read.open("readme.md");
+	if (read.is_open()) {
+
+		while (!read.eof()) {
+
+			getline(read, line);
+			cout << line << endl;
+		}
+	}
+	else {
+		cout << "Archivo inexistente o problemas para abrirlo." << endl;
+		
+	}
+
+    system("pause>nul");
+
+	read.close();
+	menu();
 
 }

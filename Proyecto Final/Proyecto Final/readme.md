@@ -87,7 +87,7 @@ La lista se muestra horizontalmente en este orden:
 Para volver al menu, el usuario presiona ENTER.
 
 MODIFICAR
-----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 Al ingresar a Modificar, el usuario aqui busca, modifica o elimina los datos de los alumnos.
 El usuario puede modificar todos los datos ingresados de un alumno.
 
@@ -115,7 +115,7 @@ Al ingresar a Manual de Usuario, el programa abre este archivo para la lectura d
 Para volver al menu, el usuario presiona ENTER.
 
 SALIR
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 Al ingresar a Salir, el programa se cierra.
 
 Aqui se guarda todo lo hecho por el usuario en un archivo excel para la lectura del mismo.

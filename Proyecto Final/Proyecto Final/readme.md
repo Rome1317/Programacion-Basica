@@ -12,6 +12,13 @@ Cada una de estas opciones tiene una letra asignada.
 El usuario presiona la tecla de la opcion que desea, acompañada con la tecla ENTER
 Las teclas que puede ingresar pueden ser desde letras a numeros.
 
+Al iniciar el programa por primera vez, la pantalla muestra la lectura de archivo.
+Como no se ha creado todavia el archivo donde se guarda la informacion, la pantalla mostrara:
+
+"Archivo inexistente o problemas para abrirlo"
+
+Para continuar, es necesario pulsar cualquier tecla. El programa te llevara al menu.
+
 REQUISITOS GENERALES
 - Este programa solo se puede utilizar en Windows.
 
@@ -64,8 +71,8 @@ Si el usuario no desea registrar una calificacion este debe de poner un numero m
 En caso de no registrar una calificacion, la calificacion final sera 0.
 
 El promedio se calcula de la siguiente manera:
-La primera calificacion constribuye un 30% de la calificacion final, la segunda calificacion 45% y la tercera 25%.
 
+La primera calificacion constribuye un 30% de la calificacion final, la segunda calificacion 45% y la tercera 25%.
 La calificacion final es la suma del porcentaje de cada una.
 
 BUSCAR
@@ -87,7 +94,7 @@ Quieres modificar algo?
 Si la tecla ingresada es 1, el programa te lleva a modificar.
 Si la tecla ingresada es 2, el programa vuelve a menu.
 
-LISTA
+LISTA DE ALUMNOS
 
 Al ingresar a Lista, el programa te muestra solo los nombres y apellidos de los alumnos registrados.
 
@@ -111,7 +118,12 @@ Este contiene:
 El usuario ingresa el numero que corresponde a la opcion.
 
 BUSCAR
-LISTA
+
+Explicado en Alumnos.
+
+LISTA DE MATRICULAS
+
+Al ingresar a Lista, el programa te muestra solo las matriculas de los alumnos registrados.
 
 BASE DE DATOS
 ----------------------------------------------------------------------------

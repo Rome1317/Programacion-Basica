@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <fstream>
 using namespace std;
@@ -90,7 +90,7 @@ void menu() {
 
 	cout << "Entrar a: " << endl;
 	cout << "A. Alumnos " << endl;
-	cout << "B. Matrículas" << endl;
+	cout << "B. MatrÃ­culas" << endl;
 	cout << "C. Base de Datos" << endl;
 	cout << "D. Modificar" << endl;
 	cout << "E. Manual de Usuario" << endl;
@@ -113,7 +113,7 @@ void menu() {
 		break;
 	case 'B':
 		system("cls");
-		cout << "Matrículas: " << endl;
+		cout << "MatrÃ­culas: " << endl;
 		cout << endl;
 
 		plates();
@@ -150,10 +150,10 @@ void menu() {
 
 void alumnos() {
 
-	cout << "¿Que quiere hacer?" << endl;
+	cout << "Â¿Que quiere hacer?" << endl;
 	cout << "1. Registrar" << endl;
 	cout << "2. Buscar " << endl;
-	cout << "3. Lista " << endl;
+	cout << "3. Lista de Alumnos" << endl;
 	cin >> choice;
 
 
@@ -193,9 +193,9 @@ void alumnos() {
 
 void plates() {
 
-	cout << "¿Que quiere hacer?" << endl;
+	cout << "Â¿Que quiere hacer?" << endl;
 	cout << "1. Buscar " << endl;
-	cout << "2. Lista " << endl;
+	cout << "2. Lista de matriculas" << endl;
 	cin >> choice;
 
 
@@ -247,13 +247,13 @@ void registrar() {
 		cout << "Ingresar Nombre(s): ";
 		getline(cin, database[id].nom);
 
-		cout << "Ingresar Matrícula: ";
+		cout << "Ingresar MatrÃ­cula: ";
 		getline(cin, database[id].mat);
 
 		for (int j = 1; j < id ; j++) {
 			
 			while ( database[id].mat == database[j].mat) {
-				cout << "Esta matrícula ya existe. Intenta de nuevo." << endl;
+				cout << "Esta matrÃ­cula ya existe. Intenta de nuevo." << endl;
 				getline(cin, database[id].mat);
 			}
 		}
@@ -346,7 +346,7 @@ void registrar() {
 			}
 		}
 
-		cout << "Ingresar Teléfono: ";
+		cout << "Ingresar TelÃ©fono: ";
 		getline(cin, database[id].tel);
 
 		range = database[id].tel.size();
@@ -356,7 +356,7 @@ void registrar() {
 
 			if (database[id].tel[z] < 48 || database[id].tel[z] > 57) {
 
-				cout << "Ingresa solo números." << endl;
+				cout << "Ingresa solo nÃºmeros." << endl;
 				getline(cin, database[id].tel);
 				range = database[id].tel.size();
 				z = -1;
@@ -369,7 +369,7 @@ void registrar() {
 
 	    while (range < 8 || range > 11) {
 
-				cout << "El teléfono debe tener al menos 8 digitos y ser menor a 12." << endl;
+				cout << "El telÃ©fono debe tener al menos 8 digitos y ser menor a 12." << endl;
 				getline(cin, database[id].tel);
 				range = database[id].tel.size();
 		}
@@ -378,10 +378,10 @@ void registrar() {
 		getline(cin, database[id].address);
 		cout << "Ingresar Colonia: ";
 		getline(cin, database[id].colonia);
-		cout << "Ingresar Número de Casa: ";
+		cout << "Ingresar NÃºmero de Casa: ";
 		getline(cin, database[id].num);
 
-		cout << "Calificación 1: ";
+		cout << "CalificaciÃ³n 1: ";
 		cin >> database[id].cal;
 
 		database[id].cal = database[id].cal * 10;
@@ -392,7 +392,7 @@ void registrar() {
 			database[id].cal = 100;
 		}
 
-		cout << "Calificación 2: ";
+		cout << "CalificaciÃ³n 2: ";
 		cin >> database[id].cal2;
 
 		database[id].cal = database[id].cal * 10;
@@ -403,7 +403,7 @@ void registrar() {
 			database[id].cal2 = 100;
 		}
 
-		cout << "Calificación 3: ";
+		cout << "CalificaciÃ³n 3: ";
 		cin >> database[id].cal3;
 
 		database[id].cal = database[id].cal * 10;
@@ -480,7 +480,7 @@ void buscar() {
 
 		if (!found) {
 			cout << endl;
-			cout << "No había registros con esos apellidos." << endl;
+			cout << "No habÃ­a registros con esos apellidos." << endl;
 		}
 
 		break;
@@ -489,7 +489,7 @@ void buscar() {
 		cout << "Search:" << endl;
 		cout << endl;
 
-		cout << "Ingrese Matrícula: ";
+		cout << "Ingrese MatrÃ­cula: ";
 		cin.ignore();
 		getline(cin, findmat);
 
@@ -513,7 +513,7 @@ void buscar() {
 
 		if (!found) {
 			cout << endl;
-			cout << "No había registros con esa matrícula." << endl;
+			cout << "No habÃ­a registros con esa matrÃ­cula." << endl;
 
 		}
 		break;
@@ -541,15 +541,15 @@ void buscar() {
 		cout << "Modificar: " << endl;
 		cout << "A. Apellido(s)" << endl;
 		cout << "B. Nombre(s)" << endl;
-		cout << "C. Matrícula" << endl;
+		cout << "C. MatrÃ­cula" << endl;
 		cout << "D. Email" << endl;
-		cout << "E. Teléfono" << endl;
+		cout << "E. TelÃ©fono" << endl;
 		cout << "F. Calle" << endl;
 		cout << "G. Colonia" << endl;
-		cout << "H. Número de Casa" << endl;
-		cout << "I. Calificación 1" << endl;
-		cout << "J. Calificación 2" << endl;
-		cout << "K. Calificación 3" << endl;
+		cout << "H. NÃºmero de Casa" << endl;
+		cout << "I. CalificaciÃ³n 1" << endl;
+		cout << "J. CalificaciÃ³n 2" << endl;
+		cout << "K. CalificaciÃ³n 3" << endl;
 		cout << "L. Eliminar Alumno" << endl;
 		cin >> option;
 
@@ -588,9 +588,9 @@ void buscar() {
 			cout << "Modificar:" << endl;
 			cout << endl;
 
-			cout << "Antigua Matrícula: " << database[i].mat << endl;
+			cout << "Antigua MatrÃ­cula: " << database[i].mat << endl;
 			cout << endl;
-			cout << "Nueva Matrícula: ";
+			cout << "Nueva MatrÃ­cula: ";
 			cin.ignore();
 			getline(cin, database[i].mat);
 
@@ -612,9 +612,9 @@ void buscar() {
 			cout << "Modificar:" << endl;
 			cout << endl;
 
-			cout << "Antiguo Teléfono: " << database[i].ape << endl;
+			cout << "Antiguo TelÃ©fono: " << database[i].ape << endl;
 			cout << endl;
-			cout << "Nuevo Teléfono: ";
+			cout << "Nuevo TelÃ©fono: ";
 			cin.ignore();
 			getline(cin, database[i].tel);
 			break;
@@ -647,9 +647,9 @@ void buscar() {
 			cout << "Modificar:" << endl;
 			cout << endl;
 
-			cout << "Antiguo Número de Casa: " << database[i].num << endl;
+			cout << "Antiguo NÃºmero de Casa: " << database[i].num << endl;
 			cout << endl;
-			cout << "Nuevo Número de Casa: ";
+			cout << "Nuevo NÃºmero de Casa: ";
 			cin.ignore();
 			getline(cin, database[i].num);
 
@@ -659,9 +659,9 @@ void buscar() {
 			cout << "Modificar:" << endl;
 			cout << endl;
 
-			cout << "Antigua Calificación 1: " << database[i].cal << endl;
+			cout << "Antigua CalificaciÃ³n 1: " << database[i].cal << endl;
 			cout << endl;
-			cout << "Calificación 1: ";
+			cout << "CalificaciÃ³n 1: ";
 			cin.ignore();
 			cin >> database[i].cal;
 
@@ -674,9 +674,9 @@ void buscar() {
 			cout << "Modificar:" << endl;
 			cout << endl;
 
-			cout << "Antigua Calificación 2: " << database[i].cal2 << endl;
+			cout << "Antigua CalificaciÃ³n 2: " << database[i].cal2 << endl;
 			cout << endl;
-			cout << "Calificación 2: ";
+			cout << "CalificaciÃ³n 2: ";
 			cin.ignore();
 			cin >> database[i].cal2;
 
@@ -688,9 +688,9 @@ void buscar() {
 			cout << "Modificar:" << endl;
 			cout << endl;
 
-			cout << "Antigua Calificación 3: " << database[i].cal3 << endl;
+			cout << "Antigua CalificaciÃ³n 3: " << database[i].cal3 << endl;
 			cout << endl;
-			cout << "Calificación 3: ";
+			cout << "CalificaciÃ³n 3: ";
 			cin.ignore();
 			cin >> database[i].cal3;
 
@@ -719,7 +719,7 @@ void buscar() {
 			cout << "Eliminar:" << endl;
 			cout << endl;
 
-			cout << "El alumno ha sido eliminado con éxito.";
+			cout << "El alumno ha sido eliminado con Ã©xito.";
 
 			system("pause > nul");
 			menu();
@@ -794,7 +794,7 @@ void names() {
 }
 
 void matriculas() {
-	cout << "Lista De Matrículas:" << endl;
+	cout << "Lista De MatrÃ­culas:" << endl;
 
 	for (int i = 1; i < id; i++) {
 
@@ -849,9 +849,9 @@ void excel() {
 	datos << "Apellido(s)" << ",";
 	datos << "Nombre(s)" << ",";
 	datos << "Email" << ",";
-	datos << "Teléfono" << ",";
-	datos << "Número Casa" << ",";
-	datos << "Dirección" << ",";
+	datos << "TelÃ©fono" << ",";
+	datos << "NÃºmero Casa" << ",";
+	datos << "DirecciÃ³n" << ",";
 	datos << "Colonia" << ",";
 	datos << "1 Parcial" << ",";
 	datos << "2 Parcial" << ",";

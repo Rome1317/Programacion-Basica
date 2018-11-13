@@ -263,7 +263,7 @@ void registrar() {
 		getline(cin, database[id].email);
 		range = database[id].email.size();
 		
-		while (range < 5) {
+		while (range < 6) {
 
 			cout << "Correo Invalido. Correo Inexistente." << endl;
 			getline(cin, database[id].email);
@@ -308,7 +308,7 @@ void registrar() {
 			getline(cin, database[id].email);
 			range = database[id].email.size();
 
-			if (range < 5) {
+			if (range < 6) {
 
 				cout << "Correo Invalido. Correo Inexistente." << endl;
 				getline(cin, database[id].email);

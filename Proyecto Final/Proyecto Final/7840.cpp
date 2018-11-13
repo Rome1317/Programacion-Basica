@@ -21,6 +21,8 @@ string lastname;
 string findmat;
 bool found = false;
 bool valid = false;
+bool aroba = false;
+bool com = false;
 
 void registrar();
 void buscar();
@@ -61,6 +63,9 @@ void main() {
 		}
 	}
 	else {
+		cout << "Lectura de Archivo:" << endl;
+		cout << endl;
+
 		cout << "Archivo inexistente o problemas para abrirlo." << endl;
 		system("pause>nul");
 	}
@@ -254,10 +259,93 @@ void registrar() {
 		}
 
 		cout << "Ingresar Email: ";
-		getline(cin, database[id].email);
 
+		getline(cin, database[id].email);
 		range = database[id].email.size();
 		
+		while (range < 5) {
+
+			cout << "Correo Invalido. Correo Inexistente." << endl;
+			getline(cin, database[id].email);
+			range = database[id].email.size();
+		}
+
+		for (int z = 1; z <= range; z++) {
+
+			if (database[id].email[z] == 64) {
+				aroba = true;
+			}
+
+			if (database[id].email[range - 4] == 46 && database[id].email[range - 3] == 99 && database[id].email[range - 2] == 111 && database[id].email[range - 1] == 109) {
+				com = true;
+			}
+
+			if (aroba == true && com == true) {
+				valid = true;
+			}
+		}
+
+		if (aroba == false && com == true) {
+
+			cout << "Falta @." << endl;
+		}
+
+		if (aroba == true && com == false) {
+
+			cout << "Falta .com" << endl;
+		}
+
+		if (aroba == false && com == false) {
+
+			cout << "Falta @ y .com" << endl;
+		}
+
+		while (valid == 0) {
+
+			aroba = false;
+			com = false;
+
+			getline(cin, database[id].email);
+			range = database[id].email.size();
+
+			if (range < 5) {
+
+				cout << "Correo Invalido. Correo Inexistente." << endl;
+				getline(cin, database[id].email);
+				range = database[id].email.size();
+			}
+
+			for (int z = 1; z <= range; z++) {
+
+				if (database[id].email[z] == 64) {
+					aroba = true;
+				}
+
+				if (database[id].email[range - 4] == 46 && database[id].email[range - 3] == 99 && database[id].email[range - 2] == 111 && database[id].email[range - 1] == 109) {
+					com = true;
+				}
+
+				if (aroba == true && com == true) {
+					valid = true;
+				}
+			}
+
+			if (aroba == false && com == true) {
+
+				cout << "Falta @." << endl;
+			}
+
+			if (aroba == true && com == false) {
+
+				cout << "Falta .com" << endl;
+			}
+
+			if (aroba == false && com == false) {
+
+				cout << "Falta @ y .com" << endl;
+			}
+		}
+
 		cout << "Ingresar Teléfono: ";
 		getline(cin, database[id].tel);
 
@@ -292,12 +380,41 @@ void registrar() {
 		getline(cin, database[id].colonia);
 		cout << "Ingresar Número de Casa: ";
 		getline(cin, database[id].num);
+
 		cout << "Calificación 1: ";
 		cin >> database[id].cal;
+
+		database[id].cal = database[id].cal * 10;
+		database[id].cal = ceil(database[id].cal);
+		database[id].cal = database[id].cal / 10;
+		
+		if (database[id].cal > 100) {
+			database[id].cal = 100;
+		}
+
 		cout << "Calificación 2: ";
 		cin >> database[id].cal2;
+
+		database[id].cal = database[id].cal * 10;
+		database[id].cal = ceil(database[id].cal);
+		database[id].cal = database[id].cal / 10;
+
+		if (database[id].cal2 > 100) {
+			database[id].cal2 = 100;
+		}
+
 		cout << "Calificación 3: ";
 		cin >> database[id].cal3;
+
+		database[id].cal = database[id].cal * 10;
+		database[id].cal = ceil(database[id].cal);
+		database[id].cal = database[id].cal / 10;
+
+		if (database[id].cal3 > 100) {
+			database[id].cal3 = 100;
+		}
+
+
 
 		if (database[id].cal < 0 || database[id].cal2 < 0 || database[id].cal3 < 0 ) {
 

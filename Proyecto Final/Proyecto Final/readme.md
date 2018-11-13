@@ -57,6 +57,8 @@ Datos:
 - Calificicacion 2
 - Calificacion 3
 
+Si el usuario registra una calificacion mayor a 100, la calificaion sera 100.
+
 Si el usuario no desea registrar una calificacion este debe de poner un numero menor a 0.
 
 En caso de no registrar una calificacion, la calificacion final sera 0.

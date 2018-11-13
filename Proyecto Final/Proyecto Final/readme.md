@@ -5,6 +5,7 @@ Los alumnos registrados se pueden buscar, modificar y eliminar.
 Ademas de guardarse en una base de datos en excel para la lectura del usuario.
 
 INSTRUCCIONES DE USO
+
 El programa funciona ingresando las teclas que muestra en pantalla.
 Al inciar, la pantalla muestra un menu con las opciones que estan a continuación.
 Cada una de estas opciones tiene una letra asignada. 
@@ -41,8 +42,52 @@ Este contiene:
 El usuario ingresa el numero que corresponde a la opcion.
 
 REGISTRAR
+
+Al momento de registrar, el programa muestra todos los datos requeridos.
+
+Datos:
+- Nombre(s)
+- Apellido(s)
+- Matricula [Esta tiene que ser unica.]
+- Email [Debe incluir @ y ".com".]
+- Telefono [Debe de ser de al menos 8 digitos y ser menor a 12.]
+- Calle
+- Colonia
+- Calificacion 1 [Las calificaciones aceptan valores del 0 a 100 con valores truncados de 2 decimales.]
+- Calificicacion 2
+- Calificacion 3
+
+Si el usuario no desea registrar una calificacion este debe de poner un numero menor a 0.
+
+En caso de no registrar una calificacion, la calificacion final sera 0.
+
+El promedio se calcula de la siguiente manera:
+La primera calificacion constribuye un 30% de la calificacion final, la segunda calificacion 45% y la tercera 25%.
+
+La calificacion final es la suma del porcentaje de cada una.
+
 BUSCAR
+
+Al momento de buscar un alumno, se muestran 2 opciones.
+
+Buscar por:
+1. Apellido(s) 
+2. Matricula
+
+Una vez ingresado los apellido(s) o la matricula, la pantalla te muestra el alumno con todos sus datos.
+
+Y te pregunta si desea modificar algo.
+
+Quieres modificar algo?
+1. Si
+2. No
+
+Si la tecla ingresada es 1, el programa te lleva a modificar.
+Si la tecla ingresada es 2, el programa vuelve a menu.
+
 LISTA
+
+Al ingresar a Lista, el programa te muestra solo los nombres y apellidos de los alumnos registrados.
 
 Al finalizar la opcion seleccionada, aparece la opcion de regresar al menu.
 
@@ -82,7 +127,7 @@ La lista se muestra horizontalmente en este orden:
 - Calificacion 1
 - Calificacion 2
 - Calificacion 3
-- Promedio
+- Promedio [Calificacion Final]
 
 Para volver al menu, el usuario presiona ENTER.
 
@@ -106,7 +151,13 @@ Modificar:
 - K. Calificacion 3
 - L. Eliminar alumno
 
+Una vez ingresada la letra, el programa te muestra el antiguo dato y te pide el nuevo.
+
+La pantalla despues te muestra los datos del alumno con el dato modificado.
+
 ELIMINAR
+
+Si se selecciona la opcion de eliminar alumno, el programa borra todos los datos de ese alumno.
 
 MANUAL DE USUARIO
 ------------------------------------------------------------------------------

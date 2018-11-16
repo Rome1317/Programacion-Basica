@@ -1,30 +1,30 @@
 MANUAL DE USUARIO
 -----------------------------------------------------------------
-Este programa se realizo con el proposito de registrar y calificar alumnos.
+Este programa se realizó con el propósito de registrar y calificar alumnos.
 Los alumnos registrados se pueden buscar, modificar y eliminar.
-Ademas de guardarse en una base de datos en excel para la lectura del usuario.
+Además de guardarse en una base de datos en Excel para la lectura del usuario.
 
 INSTRUCCIONES DE USO
 
 El programa funciona ingresando las teclas que muestra en pantalla.
-Al inciar, la pantalla muestra un menu con las opciones que estan a continuación.
+Al iniciar, la pantalla muestra un menú con las opciones que están a continuación.
 Cada una de estas opciones tiene una letra asignada. 
-El usuario presiona la tecla de la opcion que desea, acompañada con la tecla ENTER
-Las teclas que puede ingresar pueden ser desde letras a numeros.
+El usuario presiona la tecla de la opción que desea, acompañada con la tecla ENTER
+Las teclas que puede ingresar pueden ser desde letras a números.
 
 Al iniciar el programa por primera vez, la pantalla muestra la lectura de archivo.
-Como no se ha creado todavia el archivo donde se guarda la informacion, la pantalla mostrara:
+Como no se ha creado todavía el archivo donde se guarda la información, la pantalla mostrara:
 
 "Archivo inexistente o problemas para abrirlo"
 
-Para continuar, es necesario pulsar cualquier tecla. El programa te llevara al menu.
+Para continuar, es necesario pulsar cualquier tecla. El programa te llevara al menú.
 
 REQUISITOS GENERALES
 - Este programa solo se puede utilizar en Windows.
 
 MENU
 --------------------------------------------------------------------
-En el menu se muestra las opciones que el usuario puede elegir.
+En el menú se muestra las opciones que el usuario puede elegir.
 
 Este contiene:
 - A. Alumnos
@@ -34,8 +34,8 @@ Este contiene:
 - E. Manual de Usuario
 - F. Salir
 
-El usuario ingresa la letra que corresponde a la opcion.
-La letra ingresada puede estar en mayuscula o minuscula.
+El usuario ingresa la letra que corresponde a la opción.
+La letra ingresada puede estar en mayúscula o minúscula.
 
 ALUMNOS
 ----------------------------------------------------------------------
@@ -46,7 +46,7 @@ Este contiene:
 2. Buscar
 3. Lista
 
-El usuario ingresa el numero que corresponde a la opcion.
+El usuario ingresa el número que corresponde a la opción.
 
 REGISTRAR
 
@@ -55,25 +55,25 @@ Al momento de registrar, el programa muestra todos los datos requeridos.
 Datos:
 - Nombre(s)
 - Apellido(s)
-- Matricula [Esta tiene que ser unica.]
+- Matricula [Esta tiene que ser única.]
 - Email [Debe incluir @ y ".com".]
-- Telefono [Debe de ser de al menos 8 digitos y ser menor a 12.]
+- Teléfono [Debe de ser de al menos 8 dígitos y ser menor a 12.]
 - Calle
 - Colonia
-- Calificacion 1 [Las calificaciones aceptan valores del 0 a 100 con valores truncados de 2 decimales.]
-- Calificicacion 2
-- Calificacion 3
+- Calificación 1 [Las calificaciones aceptan valores del 0 a 100 con valores truncados de 2 decimales.]
+- Calificación 2
+- Calificación 3
 
-Si el usuario registra una calificacion mayor a 100, la calificaion sera 100.
+Si el usuario registra una calificación mayor a 100, la calificación será 100.
 
-Si el usuario no desea registrar una calificacion este debe de poner un numero menor a 0.
+Si el usuario no desea registrar una calificación este debe de poner un número menor a 0.
 
-En caso de no registrar una calificacion, la calificacion final sera 0.
+En caso de no registrar una calificación, la calificación final será 0.
 
 El promedio se calcula de la siguiente manera:
 
-La primera calificacion constribuye un 30% de la calificacion final, la segunda calificacion 45% y la tercera 25%.
-La calificacion final es la suma del porcentaje de cada una.
+La primera calificación contribuye un 30% de la calificación final, la segunda calificación 45% y la tercera 25%.
+La calificación final es la suma del porcentaje de cada una.
 
 BUSCAR
 
@@ -87,24 +87,24 @@ Una vez ingresado los apellido(s) o la matricula, la pantalla te muestra el alum
 
 Y te pregunta si desea modificar algo.
 
-Quieres modificar algo?
+¿Quieres modificar algo?
 1. Si
 2. No
 
 Si la tecla ingresada es 1, el programa te lleva a modificar.
-Si la tecla ingresada es 2, el programa vuelve a menu.
+Si la tecla ingresada es 2, el programa vuelve a menú.
 
 LISTA DE ALUMNOS
 
 Al ingresar a Lista, el programa te muestra solo los nombres y apellidos de los alumnos registrados.
 
-Al finalizar la opcion seleccionada, aparece la opcion de regresar al menu.
+Al finalizar la opción seleccionada, aparece la opción de regresar al menú.
 
-Regresar al Menu:
+Regresar al Menú:
 1. Si
 2. No
 
-Si la tecla ingresada es 1, el programa vuelve a menu.
+Si la tecla ingresada es 1, el programa vuelve a menú.
 Si la tecla ingresada es 2, el programa se termina y se guarda en un archivo los cambios realizados.
 
 MATRICULAS
@@ -115,7 +115,7 @@ Este contiene:
 1. Buscar
 2. Lista
 
-El usuario ingresa el numero que corresponde a la opcion.
+El usuario ingresa el número que corresponde a la opción.
 
 BUSCAR
 
@@ -123,7 +123,7 @@ Explicado en Alumnos.
 
 LISTA DE MATRICULAS
 
-Al ingresar a Lista, el programa te muestra solo las matriculas de los alumnos registrados.
+Al ingresar a Lista, el programa te muestra solo las matrículas de los alumnos registrados.
 
 BASE DE DATOS
 ----------------------------------------------------------------------------
@@ -134,20 +134,20 @@ La lista se muestra horizontalmente en este orden:
 - Apellido(s)
 - Nombre(s)
 - Email
-- Telefono
+- Teléfono
 - Numero de Casa
 - Calle
 - Colonia
-- Calificacion 1
-- Calificacion 2
-- Calificacion 3
-- Promedio [Calificacion Final]
+- Calificación 1
+- Calificación 2
+- Calificación 3
+- Promedio [Calificación Final]
 
-Para volver al menu, el usuario presiona ENTER.
+Para volver al menú, el usuario presiona ENTER.
 
 MODIFICAR
 -------------------------------------------------------------------------------
-Al ingresar a Modificar, el usuario aqui busca, modifica o elimina los datos de los alumnos.
+Al ingresar a Modificar, el usuario aquí busca, modifica o elimina los datos de los alumnos.
 El usuario puede modificar todos los datos ingresados de un alumno.
 
 Este contiene:
@@ -156,34 +156,34 @@ Modificar:
 - B. Nombre(s)
 - C. Matricula
 - D. Email
-- E. Telefono
+- E. Teléfono
 - F. Calle
 - G. Colonia
 - H. Numero de Casa
-- I. Calificacion 1
-- J. Calificacion 2
-- K. Calificacion 3
+- I. Calificación 1
+- J. Calificación 2
+- K. Calificación 3
 - L. Eliminar alumno
 
 Una vez ingresada la letra, el programa te muestra el antiguo dato y te pide el nuevo.
 
-La pantalla despues te muestra los datos del alumno con el dato modificado.
+La pantalla después te muestra los datos del alumno con el dato modificado.
 
 ELIMINAR
 
-Si se selecciona la opcion de eliminar alumno, el programa borra todos los datos de ese alumno.
+Si se selecciona la opción de eliminar alumno, el programa borra todos los datos de ese alumno.
 
 MANUAL DE USUARIO
 ------------------------------------------------------------------------------
 Al ingresar a Manual de Usuario, el programa abre este archivo para la lectura del usuario.
 
-Para volver al menu, el usuario presiona ENTER.
+Para volver al menú, el usuario presiona ENTER.
 
 SALIR
 -------------------------------------------------------------------------------
 Al ingresar a Salir, el programa se cierra.
 
-Aqui se guarda todo lo hecho por el usuario en un archivo excel para la lectura del mismo.
-Ademas se guarda tambien un archivo de texto en binario para que el programa pueda leerlo.
-Esto por si el usuario vuelve a entrar al programa y continue con los datos anteriormente ingresados.
-Estos archivos se guardan en la carpeta donde se encuentra el codigo.
+Aquí se guarda todo lo hecho por el usuario en un archivo Excel para la lectura del mismo.
+Además, se guarda también un archivo de texto en binario para que el programa pueda leerlo.
+Esto por si el usuario vuelve a entrar al programa y continúe con los datos anteriormente ingresados.
+Estos archivos se guardan en la carpeta donde se encuentra el código.

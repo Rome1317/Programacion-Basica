@@ -67,6 +67,8 @@ void main() {
 		cout << endl;
 
 		cout << "Archivo inexistente o problemas para abrirlo." << endl;
+		cout << endl;
+		cout << "Presione cualquier tecla para entrar a Menu." << endl;
 		system("pause>nul");
 	}
 
@@ -265,7 +267,7 @@ void registrar() {
 		
 		while (range < 6) {
 
-			cout << "Correo Invalido. Correo Inexistente." << endl;
+			cout << "Correo invalido o inexistente." << endl;
 			getline(cin, database[id].email);
 			range = database[id].email.size();
 		}
@@ -310,7 +312,7 @@ void registrar() {
 
 			if (range < 6) {
 
-				cout << "Correo Invalido. Correo Inexistente." << endl;
+				cout << "Correo invalido o inexistente." << endl;
 				getline(cin, database[id].email);
 				range = database[id].email.size();
 			}

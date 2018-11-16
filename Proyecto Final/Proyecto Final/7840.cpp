@@ -468,7 +468,7 @@ void buscar() {
 				cout << endl;
 				cout << "Alumno:" << endl;
 
-				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+				cout << database[i].mat << "  " << database[i].ape << ", " << database[i].nom << "  " <<
 					database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 					database[i].address << "  " << database[i].colonia << "  " << database[i].cal << "  " <<
 					database[i].cal2 << "  " << database[i].cal3 << "  " << database[i].promedio << endl;
@@ -501,7 +501,7 @@ void buscar() {
 				cout << endl;
 				cout << "Alumno:" << endl;
 
-				cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+				cout << database[i].mat << "  " << database[i].ape << ", " << database[i].nom << "  " <<
 					database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 					database[i].address << "  " << database[i].colonia << "  " << database[i].cal << "  " <<
 					database[i].cal2 << "  " << database[i].cal3 << "  " << database[i].promedio << endl;
@@ -534,7 +534,7 @@ void buscar() {
 		cout << "Alumno:" << endl;
 		cout << endl;
 
-		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+		cout << database[i].mat << "  " << database[i].ape << ", " << database[i].nom << "  " <<
 			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 			database[i].address << "  " << database[i].colonia << "  " << database[i].cal << "  " <<
 			database[i].cal2 << "  " << database[i].cal3 << "  " << database[i].promedio << endl;
@@ -739,7 +739,7 @@ void buscar() {
 		cout << "Alumno:" << endl;
 		cout << endl;
 
-		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+		cout << database[i].mat << "  " << database[i].ape << ", " << database[i].nom << "  " <<
 			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 			database[i].address << "  " << database[i].colonia << "  " << database[i].cal << "  " <<
 			database[i].cal2 << "  " << database[i].cal3 << "  " << database[i].promedio << endl;
@@ -789,7 +789,7 @@ void names() {
 
 
 		cout << endl;
-		cout << database[i].ape << " " << database[i].nom << endl;
+		cout << database[i].ape << "," << database[i].nom << endl;
 
 	}
 
@@ -817,7 +817,7 @@ void basedatos() {
 
 	for (int i = 1; i < id; i++) {
 
-		cout << database[i].mat << "  " << database[i].ape << " " << database[i].nom << "  " <<
+		cout << database[i].mat << "  " << database[i].ape << ", " << database[i].nom << "  " <<
 			database[i].email << "  " << database[i].tel << "  " << database[i].num << " " <<
 			database[i].address << "  " << database[i].colonia << "  " << database[i].cal << "  " <<
 			database[i].cal2 << "  " << database[i].cal3 << "  " << database[i].promedio << endl;

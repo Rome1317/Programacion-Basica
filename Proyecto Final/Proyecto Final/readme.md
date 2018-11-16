@@ -53,8 +53,8 @@ REGISTRAR
 Al momento de registrar, el programa muestra todos los datos requeridos.
 
 Datos:
-- Nombre(s)
 - Apellido(s)
+- Nombre(s)
 - Matricula [Esta tiene que ser única.]
 - Email [Debe incluir @ y ".com".]
 - Teléfono [Debe de ser de al menos 8 dígitos y ser menor a 12.]
